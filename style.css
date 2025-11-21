@@ -1,0 +1,150 @@
+body {
+  font-family: "맑은 고딕", "Malgun Gothic", Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.screen.active {
+  display: flex;
+}
+
+/* 시작 화면 사이버틱 배경 */
+#startScreen {
+  background: radial-gradient(circle at 50% 50%, #00111a 0%, #000010 100%);
+  overflow: hidden;
+}
+
+#startScreen::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(0, 255, 255, 0.08),
+    rgba(0, 255, 255, 0.08) 2px,
+    transparent 2px,
+    transparent 6px
+  );
+  animation: moveNeonLines 20s linear infinite;
+  opacity: 0.4;
+}
+
+@keyframes moveNeonLines {
+  from { transform: translate(0, 0); }
+  to { transform: translate(40%, 40%); }
+}
+
+.title-doHyeon {
+  font-family: 'Do Hyeon', sans-serif;
+  font-size: 70px;
+  color: #00eaff;
+  text-shadow: 0 0 5px #00eaff, 0 0 15px #00eaff, 0 0 30px #0077ff;
+  margin-bottom: 60px;
+  letter-spacing: 2px;
+  z-index: 1;
+}
+
+#startScreen button {
+  padding: 20px 50px;
+  font-size: 24px;
+  border-radius: 15px;
+  background-color: #0078ff;
+  border: 2px solid #00eaff;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+  position: relative;
+  z-index: 2;
+}
+
+#startScreen button:hover {
+  background-color: #00aaff;
+  transform: scale(1.05);
+}
+
+/* 방법 화면 */
+#howToPlayScreen {
+  background: radial-gradient(circle at 50% 50%, #001a22 0%, #000014 100%);
+  color: #ccfaff;
+  text-shadow: 0 0 8px #00ffff;
+}
+
+#howToPlayScreen button {
+  background-color: #00aaff;
+  border: 2px solid #00ffff;
+  color: white;
+  font-size: 20px;
+  padding: 15px 40px;
+  border-radius: 12px;
+}
+
+#howToPlayScreen button:hover {
+  background-color: #00eaff;
+}
+
+/* 게임 화면 */
+#gameScreen {
+  background: radial-gradient(circle at 50% 50%, #00111a 0%, #000010 100%);
+  color: #ccfaff;
+}
+
+.game-container {
+  background-color: rgba(0, 10, 30, 0.8);
+  border: 2px solid #00ffff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  width: 400px;
+  margin: auto;
+}
+
+/* 점수 크게 표시 */
+.scoreboard p:first-child span {
+  font-size: 48px;
+  font-weight: bold;
+  color: #00eaff;
+  text-shadow: 0 0 10px #00eaff;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  background-color: #0078ff;
+  color: white;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #00aaff;
+}
+
+.ranking {
+  margin-top: 20px;
+}
+
+#message {
+  font-weight: bold;
+  margin-top: 20px;
+  color: #ff8080;
+}
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>주사위 게임 🎲</title>
+
+  <!-- Do Hyeon 폰트 -->
+  <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 시작 화면 -->
+  <div id="startScreen" class="screen active">
+    <h1 class="title-doHyeon">주사위 게임 🎲</h1>
+    <button id="startBtn">게임 시작하기</button>
+  </div>
+
+  <!-- 게임 방법 화면 -->
+  <div id="howToPlayScreen" class="screen">
+    <h2>게임 방법 📘</h2>
+    <ol style="text-align:left; display:inline-block;">
+      <li>주사위를 굴려서 점수를 얻는다.</li>
+      <li>특별 숫자를 뽑으면 그 숫자에 배율을 곱한 점수를 얻는다.</li>
+      <li>0이 나오면 즉시 게임이 종료된다.</li>
+      <li>이름을 입력하고 랭킹에 등록한다.</li>
+    </ol>
+    <button id="confirmBtn">알겠습니다</button>
+  </div>
+
+  <!-- 실제 게임 화면 -->
+  <div id="gameScreen" class="screen">
+    <div class="game-container">
+      <h1>주사위 게임 🎲</h1>
+
+      <div class="scoreboard">
+        <p>점수: <span id="score">0</span></p>
+        <p>특별 숫자: <span id="special">-</span></p>
+        <p>현재 배율: <span id="multiplier">-</span>배</p>
+      </div>
+
+      <div class="dice-section">
+        <button id="rollBtn">주사위 굴리기</button>
+        <button id="restartBtn">다시 시작</button>
+        <p>나온 숫자: <span id="diceValue">-</span></p>
+      </div>
+
+      <div id="nameInputSection" style="display:none; margin-top:15px;">
+        <p>이름을 입력하세요:</p>
+        <input type="text" id="playerName" placeholder="플레이어 이름">
+        <button id="submitNameBtn">등록</button>
+      </div>
+
+      <div class="ranking">
+        <h2>🏆 상위 10위 랭킹</h2>
+        <ol id="rankingList"></ol>
+      </div>
+
+      <p id="message"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
